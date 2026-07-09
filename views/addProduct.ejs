@@ -44,7 +44,7 @@
 
           <div class="card-body">
 
-            <form action="/addProduct" method="POST">
+            <form action="/addProduct" method="POST" enctype="multipart/form-data">
 
               <div class="mb-3">
                 <label for="name" class="form-label">
@@ -74,10 +74,11 @@
 
               <div class="mb-4">
                 <label for="image" class="form-label">
-                  Image URL
+                  Image
                 </label>
 
-                <input type="text" class="form-control" id="image" name="image" placeholder="Enter image URL" required>
+                //Instead of using text as input type, file will be used as the input type for local image
+                <input type="file" class="form-control" id="image" name="image" accept="image/*">
               </div>
 
               <div class="d-grid gap-2">

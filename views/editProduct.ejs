@@ -48,7 +48,7 @@
 
             <div class="card-body">
 
-              <form action="/editProduct/<%= product.productId %>" method="POST">
+              <form action="/editProduct/<%= product.productId %>" method="POST" enctype="multipart/form-data">
 
                 <div class="mb-3">
                   <label for="name" class="form-label">
@@ -83,7 +83,7 @@
                   </label>
 
                   <div class="text-center">
-                    <img src="<%= product.image %>" alt="<%= product.productName %>" class="img-fluid rounded border"
+                    <img src="images/<%= product.image %>" alt="<%= product.productName %>" class="img-fluid rounded border"
                       style="max-height: 200px;">
                   </div>
                 </div>
