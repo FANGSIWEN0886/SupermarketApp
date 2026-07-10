@@ -140,9 +140,9 @@ app.post('/editProduct/:ID', upload.single('image'), (req, res) => {
     const {name, quantity, price} = req.body;
     
     //Enable extraction of image from the form
-    let image;
-    if (req.file) {
-        image = req.file.filename;
+    let image = req.body.currentImage; //Retrieve current image filename
+    if (req.file) { //If new image is uploaded
+        image = req.file.filename; //Set image to be new image filename
     } else {
         image = null
     };
@@ -150,6 +150,7 @@ app.post('/editProduct/:ID', upload.single('image'), (req, res) => {
     const sql = "UPDATE products SET productName = ?, quantity = ?, price = ?, image = ? WHERE productId = ?";
 
     //Edit the existing product in DB
+    //Remember to follow the sequency of attributes in sql query
     connection.query(sql, [name, quantity, price, image, productId], (error, results) => {
         if (error) {
             //Handle any error that occurs during the database operation

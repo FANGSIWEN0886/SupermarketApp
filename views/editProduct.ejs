@@ -79,12 +79,11 @@
 
                 <div class="mb-3">
                   <label class="form-label">
-                    Current Image
+                    Image
                   </label>
 
                   <div class="text-center">
-                    <img src="images/<%= product.image %>" alt="<%= product.productName %>" class="img-fluid rounded border"
-                      style="max-height: 200px;">
+                    <input type="file" class="form-control" id="image" name="image" accept="'image/*" value="<%= product.image %>">
                   </div>
                 </div>
 
