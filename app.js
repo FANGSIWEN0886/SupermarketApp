@@ -91,7 +91,7 @@ app.post('/addProduct', upload.single('image'), (req, res) => {
     //How to extract the file/image name in form
     let image;
     if (req.file) {
-        // safe only the filename of the file is enough
+        // currently we only save the filename of the file
         image = req.file.filename;
     } else {
         image = null;
